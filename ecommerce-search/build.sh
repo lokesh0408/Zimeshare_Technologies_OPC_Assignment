@@ -12,3 +12,9 @@ php artisan migrate --force
 
 # Run database seeds
 php artisan db:seed --force
+
+# Export the site to static files
+php artisan export
+
+# Move exported files to the public directory for Netlify to serve
+mv public/exported public
