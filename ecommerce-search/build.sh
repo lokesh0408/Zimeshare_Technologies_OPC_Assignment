@@ -5,16 +5,13 @@ composer install --no-dev --optimize-autoloader
 
 # Install NPM dependencies and build assets
 npm install
-npm run prod
+npm run build
 
-# Run database migrations
-php artisan migrate --force
-
-# Run database seeds
-php artisan db:seed --force
+# Run migrations and seed the database
+php artisan migrate:fresh --seed
 
 # Export the site to static files
 php artisan export
 
 # Move exported files to the public directory for Netlify to serve
-mv public/exported public
+mv dist public
